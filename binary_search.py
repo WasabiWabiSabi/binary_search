@@ -84,8 +84,8 @@ def count_repeats(xs, x):
 
 def argmin(f, lo, hi, epsilon=1e-3):
     def go(lo, hi):
-        m1 = lo + (hi-lo) / 4
-        m2 = hi - (hi-lo) / 4
+        m1 = lo + (hi - lo) / 4
+        m2 = hi - (hi - lo) / 4
         if m1 > m2:
             temp = m2
             m2 = m1
@@ -106,7 +106,7 @@ def argmin(f, lo, hi, epsilon=1e-3):
 def find_boundaries(f):
     lo = - 1
     hi = 1
-    mid = (lo+hi)/2
+    mid = (lo + hi) / 2
     if f(lo) > f(mid):
         lo *= 2
     elif f(hi) > f(mid):
